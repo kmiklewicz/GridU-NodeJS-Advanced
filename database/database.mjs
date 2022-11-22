@@ -5,9 +5,6 @@ const initDatabase = async () => {
     const db = await Database.open("database/database.db");
     db.run("PRAGMA foreign_keys = ON");
 
-    // db.run("DROP TABLE User");
-    // db.run("DROP TABLE Exercise");
-
     db.run(`CREATE TABLE IF NOT EXISTS User(
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       username TEXT NOT NULL UNIQUE
