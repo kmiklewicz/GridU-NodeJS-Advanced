@@ -39,7 +39,7 @@ export const getExerciseLogs = async (req, res) => {
     const userId = req.params._id;
 
     let exercises = await db.all(
-      "SELECT * FROM Exercise WHERE userId = ?",
+      "SELECT * FROM Exercise WHERE userId = ? ORDER BY date ASC",
       userId
     );
 
